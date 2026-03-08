@@ -57,14 +57,37 @@ export function HeroSection() {
                 View work
               </a>
             </div>
+
+            <div className="mt-12 flex items-center gap-6 opacity-40">
+              <img src="/images/meta-partner.svg" alt="Meta Business Partner" className="h-6 invert dark:invert-0" />
+              <img src="/images/tiktok-partner.svg" alt="TikTok Marketing Partner" className="h-6 invert dark:invert-0" />
+              <img src="/images/g2-rating.svg" alt="G2 Rating" className="h-6 invert dark:invert-0" />
+            </div>
           </div>
 
           <div className="relative border-t md:border-t-0 md:border-l">
-            <div className="aspect-[4/5] w-full bg-muted md:aspect-auto md:h-full">
-              <div className="flex h-full items-center justify-center">
-                <p className="text-xs uppercase tracking-widest text-muted-foreground">
-                  Hero image
-                </p>
+            <div className="relative aspect-[4/5] w-full overflow-hidden md:aspect-auto md:h-full">
+              <img
+                src="/images/hero-bg.jpg"
+                alt="Person using phone with DM automation"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute right-4 bottom-32 left-4 flex flex-col gap-3 md:right-8 md:left-8">
+                <img
+                  src="/images/bubble-01.png"
+                  alt="Chat bubble"
+                  className="ml-auto w-48 md:w-64"
+                />
+                <img
+                  src="/images/bubble-02.png"
+                  alt="Chat reply"
+                  className="w-48 md:w-64"
+                />
+                <img
+                  src="/images/bubble-03.png"
+                  alt="Chat response"
+                  className="ml-auto w-48 md:w-64"
+                />
               </div>
             </div>
           </div>
