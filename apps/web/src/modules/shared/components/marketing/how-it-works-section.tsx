@@ -27,11 +27,11 @@ export function HowItWorksSection() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-3">
           {steps.map((step, i) => (
             <div
               key={step.number}
-              className={`py-10 md:py-16 ${i < steps.length - 1 ? 'border-b md:border-b-0 md:border-r' : ''} ${i > 0 ? 'md:pl-12' : ''} ${i < steps.length - 1 ? 'md:pr-12' : ''}`}
+              className={`py-10 md:py-16 ${i < 2 ? 'md:border-r' : ''} ${i === 0 ? 'md:pr-12' : i === 1 ? 'md:px-12' : 'md:pl-12'}`}
             >
               <p className="text-xs text-muted-foreground">{step.number}</p>
               <h3 className="mt-4 text-lg font-medium text-foreground">{step.title}</h3>

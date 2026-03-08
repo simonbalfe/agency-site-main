@@ -1,0 +1,15 @@
+[     273ms] [WARNING] You may test your Stripe.js integration over HTTP. However, live Stripe.js integrations must use HTTPS. @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[     313ms] Error: Switched to client rendering because the server rendering errored:
+
+Cannot find module '@shared/components/marketing/work-section' imported from '/Users/simon/core/dev/projects/websites/ai-agency-website/apps/web/src/app/index.tsx'
+    at fetchModule (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:33980:34)
+    at RunnableDevEnvironment.fetchModule (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:34826:10)
+    at fetchModule (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:34784:17)
+    at handleInvoke (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:25834:27)
+    at EventEmitter.listenerForInvokeHandler (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:25889:19)
+    at EventEmitter.emit (node:events:519:28)
+    at EventEmitter.emit (node:domain:489:12)
+    at Object.send (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:15052:39)
+    at Object.invoke (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/module-runner.js:535:31)
+    at Object.invoke (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/module-runner.js:584:31)
+    at ModuleRunner.getModuleInformation (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/module-runner.js:1086:28)

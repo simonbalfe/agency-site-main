@@ -1,10 +1,10 @@
 const results = [
-  { label: 'Fitness Coach', stat: '2,400 leads/mo', image: '/images/influencer-01.jpg' },
-  { label: 'DTC Skincare', stat: '340% reply rate', image: '/images/influencer-02.jpg' },
-  { label: 'Course Creator', stat: '$47K in DM sales', image: '/images/influencer-03.jpg' },
-  { label: 'SaaS Founder', stat: '18K DMs automated', image: '/images/influencer-04.jpg' },
-  { label: 'E-commerce Brand', stat: '12x ROI on content', image: '/images/social-bg.jpg' },
-  { label: 'Real Estate Agent', stat: '890 bookings/mo', image: '/images/hero-bg.jpg' },
+  { label: 'Fitness Coach', stat: '2,400 leads/mo' },
+  { label: 'DTC Skincare', stat: '340% reply rate' },
+  { label: 'Course Creator', stat: '$47K in DM sales' },
+  { label: 'SaaS Founder', stat: '18K DMs automated' },
+  { label: 'E-commerce Brand', stat: '12x ROI on content' },
+  { label: 'Real Estate Agent', stat: '890 bookings/mo' },
 ]
 
 export function WorkSection() {
@@ -18,22 +18,21 @@ export function WorkSection() {
           </h2>
         </div>
 
-        <div className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
-          {results.map((result) => (
-            <div key={result.label} className="group bg-background">
-              <div className="aspect-[4/5] overflow-hidden bg-muted transition-colors group-hover:bg-muted/70">
-                <img
-                  src={result.image}
-                  alt={result.label}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          {results.map((result, i) => {
+            const isLastRow = i >= results.length - 3
+            const col = i % 3
+
+            return (
+              <div
+                key={result.label}
+                className={`py-10 md:py-12 ${!isLastRow ? 'border-b' : ''} ${col < 2 ? 'lg:border-r' : ''} ${col === 0 ? 'lg:pr-12' : col === 1 ? 'lg:px-12' : 'lg:pl-12'}`}
+              >
+                <p className="text-2xl font-medium text-foreground">{result.stat}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{result.label}</p>
               </div>
-              <div className="flex items-center justify-between border-t px-4 py-3">
-                <p className="text-xs font-medium text-foreground">{result.label}</p>
-                <p className="text-xs text-muted-foreground">{result.stat}</p>
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
