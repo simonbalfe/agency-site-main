@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "target": "ES2022",
+    "noEmit": true,
+    "incremental": true,
+    "declaration": true,
+    "declarationMap": true
+  }
+}

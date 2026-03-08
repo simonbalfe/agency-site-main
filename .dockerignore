@@ -1,0 +1,11 @@
+node_modules
+.output
+dist
+.vinxi
+.wrangler
+.git
+.github
+.env
+.env.*
+*.md
+.DS_Store 

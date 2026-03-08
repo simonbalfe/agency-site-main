@@ -1,0 +1,160 @@
+[     397ms] Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <CatchBoundaryImpl getResetKey={function getResetKey} onCatch={function onCatch}>
+      <SafeFragment fallback={function fallback}>
+        <MatchInnerImpl matchId="__root__/">
+          <RootLayout>
+            <html lang="en" suppressHydrationWarning={true}>
+              <head>
+              <body suppressHydrationWarning={true}>
+                <QueryClientProvider client={{}}>
+                  <ThemeProvider>
+                    <PostHogProvider>
+                      <PostHogProvider client={{...}}>
+                        <SuspendedPostHogPageView>
+                        <LayoutContent>
+                          <OutletImpl>
+                            <Suspense fallback={null}>
+-                             <script>
+                ...
+
+    at throwOnHydrationMismatch (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=38de95ef:3920:13)
+    at popHydrationState (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=38de95ef:4028:11)
+    at completeWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=38de95ef:9193:30)
+    at runWithFiberInDEV (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=38de95ef:997:72)
+    at completeUnitOfWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=38de95ef:12669:22)
+    at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=38de95ef:12575:29)
+    at workLoopConcurrentByScheduler (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=38de95ef:12557:11)
+    at renderRootConcurrent (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=38de95ef:12539:71)
+    at performWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=38de95ef:11766:152)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=38de95ef:13505:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=38de95ef:36:50)
+[     415ms] [WARNING] You may test your Stripe.js integration over HTTP. However, live Stripe.js integrations must use HTTPS. @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  574572ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/src/app/index.tsx?t=1772992033920&tsr-split=component:0
+[  574572ms] [ERROR] [vite] Failed to reload /src/app/index.tsx?tsr-split=component. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  574900ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/src/app/index.tsx?t=1772992033920&tsr-split=component:0
+[  574909ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992033920&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992033920&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  574909ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992033920&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992033920&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  574910ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992033920&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992033920&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  574910ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992033920&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992033920&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  574911ms] [ERROR] %o
+
+%s
+
+%s
+ TypeError: Failed to fetch dynamically imported module: http://localhost:3000/src/app/index.tsx?t=1772992033920&tsr-split=component The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl. @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  574911ms] [WARNING] Warning: Error in route match: // @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  574956ms] [WARNING] You may test your Stripe.js integration over HTTP. However, live Stripe.js integrations must use HTTPS. @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  583412ms] [WARNING] You may test your Stripe.js integration over HTTP. However, live Stripe.js integrations must use HTTPS. @ https://js.stripe.com/v3:0
+[  583423ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/src/app/index.tsx?t=1772992042578&tsr-split=component:0
+[  583497ms] Error: Switched to client rendering because the server rendering errored:
+
+Cannot find module '@shared/components/marketing/work-section' imported from '/Users/simon/core/dev/projects/websites/ai-agency-website/apps/web/src/app/index.tsx'
+    at fetchModule (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:33980:34)
+    at RunnableDevEnvironment.fetchModule (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:34826:10)
+    at fetchModule (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:34784:17)
+    at handleInvoke (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:25834:27)
+    at EventEmitter.listenerForInvokeHandler (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:25889:19)
+    at EventEmitter.emit (node:events:519:28)
+    at EventEmitter.emit (node:domain:489:12)
+    at Object.send (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:15052:39)
+    at Object.invoke (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/module-runner.js:535:31)
+    at Object.invoke (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/module-runner.js:584:31)
+    at ModuleRunner.getModuleInformation (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/module-runner.js:1086:28)
+[  583652ms] [WARNING] You may test your Stripe.js integration over HTTP. However, live Stripe.js integrations must use HTTPS. @ https://js.stripe.com/v3:0
+[  583661ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/src/app/index.tsx?t=1772992042578&tsr-split=component:0
+[  583668ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992042578&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992042578&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  583668ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992042578&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992042578&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  583669ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992042578&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992042578&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  583669ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992042578&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992042578&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  583670ms] [ERROR] %o
+
+%s
+
+%s
+ TypeError: Failed to fetch dynamically imported module: http://localhost:3000/src/app/index.tsx?t=1772992042578&tsr-split=component The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl. @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  583670ms] [WARNING] Warning: Error in route match: // @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  594768ms] [WARNING] You may test your Stripe.js integration over HTTP. However, live Stripe.js integrations must use HTTPS. @ https://js.stripe.com/v3:0
+[  594776ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/src/app/index.tsx?t=1772992053928&tsr-split=component:0
+[  594844ms] Error: Switched to client rendering because the server rendering errored:
+
+Cannot find module '@shared/components/marketing/work-section' imported from '/Users/simon/core/dev/projects/websites/ai-agency-website/apps/web/src/app/index.tsx'
+    at fetchModule (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:33980:34)
+    at RunnableDevEnvironment.fetchModule (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:34826:10)
+    at fetchModule (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:34784:17)
+    at handleInvoke (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:25834:27)
+    at EventEmitter.listenerForInvokeHandler (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:25889:19)
+    at EventEmitter.emit (node:events:519:28)
+    at EventEmitter.emit (node:domain:489:12)
+    at Object.send (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:15052:39)
+    at Object.invoke (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/module-runner.js:535:31)
+    at Object.invoke (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/module-runner.js:584:31)
+    at ModuleRunner.getModuleInformation (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/module-runner.js:1086:28)
+[  595006ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/src/app/index.tsx?t=1772992053928&tsr-split=component:0
+[  595013ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992053928&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992053928&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  595013ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992053928&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992053928&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  595014ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992053928&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992053928&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  595014ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992053928&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992053928&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  595014ms] [ERROR] %o
+
+%s
+
+%s
+ TypeError: Failed to fetch dynamically imported module: http://localhost:3000/src/app/index.tsx?t=1772992053928&tsr-split=component The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl. @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  595014ms] [WARNING] Warning: Error in route match: // @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  595019ms] [WARNING] You may test your Stripe.js integration over HTTP. However, live Stripe.js integrations must use HTTPS. @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  606267ms] [WARNING] You may test your Stripe.js integration over HTTP. However, live Stripe.js integrations must use HTTPS. @ https://js.stripe.com/v3:0
+[  606277ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/src/app/index.tsx?t=1772992065404&tsr-split=component:0
+[  606340ms] Error: Switched to client rendering because the server rendering errored:
+
+Cannot find module '@shared/components/marketing/work-section' imported from '/Users/simon/core/dev/projects/websites/ai-agency-website/apps/web/src/app/index.tsx'
+    at fetchModule (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:33980:34)
+    at RunnableDevEnvironment.fetchModule (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:34826:10)
+    at fetchModule (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:34784:17)
+    at handleInvoke (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:25834:27)
+    at EventEmitter.listenerForInvokeHandler (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:25889:19)
+    at EventEmitter.emit (node:events:519:28)
+    at EventEmitter.emit (node:domain:489:12)
+    at Object.send (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:15052:39)
+    at Object.invoke (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/module-runner.js:535:31)
+    at Object.invoke (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/module-runner.js:584:31)
+    at ModuleRunner.getModuleInformation (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/module-runner.js:1086:28)
+[  606508ms] [WARNING] You may test your Stripe.js integration over HTTP. However, live Stripe.js integrations must use HTTPS. @ https://js.stripe.com/v3:0
+[  606518ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/src/app/index.tsx?t=1772992065404&tsr-split=component:0
+[  606525ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992065404&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992065404&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  606525ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992065404&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992065404&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  606526ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992065404&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992065404&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  606526ms] [ERROR] [Router Error] {message: Failed to fetch dynamically imported module: http:…app/index.tsx?t=1772992065404&tsr-split=component, stack: TypeError: Failed to fetch dynamically imported mo…app/index.tsx?t=1772992065404&tsr-split=component, name: TypeError, cause: undefined} @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  606527ms] [ERROR] %o
+
+%s
+
+%s
+ TypeError: Failed to fetch dynamically imported module: http://localhost:3000/src/app/index.tsx?t=1772992065404&tsr-split=component The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl. @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  606527ms] [WARNING] Warning: Error in route match: // @ http://localhost:3000/node_modules/.vite/deps/@sentry_tanstackstart-react.js?v=38de95ef:7010
+[  614668ms] [WARNING] You may test your Stripe.js integration over HTTP. However, live Stripe.js integrations must use HTTPS. @ https://js.stripe.com/v3:0
+[  614743ms] Error: Switched to client rendering because the server rendering errored:
+
+Cannot find module '@shared/components/marketing/work-section' imported from '/Users/simon/core/dev/projects/websites/ai-agency-website/apps/web/src/app/index.tsx'
+    at fetchModule (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:33980:34)
+    at RunnableDevEnvironment.fetchModule (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:34826:10)
+    at fetchModule (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:34784:17)
+    at handleInvoke (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:25834:27)
+    at EventEmitter.listenerForInvokeHandler (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:25889:19)
+    at EventEmitter.emit (node:events:519:28)
+    at EventEmitter.emit (node:domain:489:12)
+    at Object.send (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:15052:39)
+    at Object.invoke (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/module-runner.js:535:31)
+    at Object.invoke (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/module-runner.js:584:31)
+    at ModuleRunner.getModuleInformation (file:///Users/simon/core/dev/projects/websites/ai-agency-website/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.13_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/module-runner.js:1086:28)
